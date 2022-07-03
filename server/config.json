@@ -1,0 +1,16 @@
+{
+    "MQTTBrokerInfo": {
+        "clientId": "SERVER_SWS",
+        "host": "broker.hivemq.com",
+        "port": 1883,
+        "dataTopic": "sws_data",
+        "commandTopic": "sws_command",
+        "stateTopic": "sws_state"
+    },
+    "databaseInfo": {
+        "host": "localhost",
+        "user": "root",
+        "password": "123456",
+        "database": "sws"
+    }
+}
