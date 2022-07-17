@@ -1,0 +1,275 @@
+html {
+  background: url('/public/images/background.jpg') center center no-repeat fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tiêu đề */
+
+.title{
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title h1{
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.title p{
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Phần thân */
+
+.container{
+  width: 500px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  padding: 8px;
+}
+
+.container h1{
+  font-size: 24px;
+}
+
+/* Đăng nhập */
+
+.content-left{
+  flex: 5;
+  padding: 24px 0px;
+  padding-right: 8px;
+  border-right: 1px white solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container{
+  width: 100%;
+  height: 100%;
+}
+
+.content-left-login{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+}
+
+.content-left-login-top{
+  flex: 1;
+  margin-bottom: 36px;
+}
+
+.content-left-login-body{
+  width: 100%;
+  flex: 6;
+}
+
+.content-left-login-body-item{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.content-left-login-body-item p{
+  font-size: 16px;
+}
+
+.content-left-login-body-item input{
+  height: 35px;
+  padding: 12px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 220px;
+}
+
+.content-left-login-bottom{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.content-left-login-bottom button{
+  width: 120px;
+  font-size: 14px;
+  padding: 8px 0px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.content-left-login-bottom button:hover{
+  background-color: #333;
+  border-color: white;
+  color: white;
+}
+
+
+
+/* Phần bên phải */
+
+.content-right{
+  flex: 1;
+  padding: 24px 0px;
+  padding-left: 8px;
+  border-left: 1px white solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change-button{
+  font-size: 32px;
+  color: white;
+  transition: .3s all;
+}
+
+.change-button:hover{
+  color: #333;
+}
+
+/* Đăng ký */
+.register-container{
+  width: 100%;
+  height: 100%;
+}
+
+.content-right-register{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 32px;
+}
+
+.content-right-register-top{
+  flex: 1;
+  display: flex;
+  margin-bottom: 36px;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-right-register-body{
+  width: 100%;
+  flex: 6;
+}
+
+.content-right-register-body-item{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.content-right-register-body-item p{
+  font-size: 16px;
+}
+
+.content-right-register-body-item input{
+  height: 35px;
+  padding: 12px;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 220px;
+}
+
+.content-right-register-bottom{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.content-right-register-bottom button{
+  width: 120px;
+  font-size: 14px;
+  padding: 8px 0px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  color: #333;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.content-right-register-bottom button:hover{
+  background-color: #333;
+  border-color: white;
+  color: white;
+}
+
+/* Responsive cho điện thoại */
+@media only screen and (max-width: 600px){
+  .container{
+    width: 360px;
+  }
+
+  .content-left-login{
+    padding: 0px 12px;
+  }
+
+  .content-left-login-body-item p{
+    font-size: 14px;
+  }
+
+  .content-left-login-body-item input{
+    width: 160px;
+  }
+
+  .content-right-register{
+    padding: 0px 12px;
+  }
+
+  .content-right-register-body-item p{
+    font-size: 14px;
+  }
+
+  .content-right-register-body-item input{
+    width: 160px;
+  }
+}

@@ -1,0 +1,213 @@
+/* ----- Style chung ----- */
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #999;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* ----- Phần bên trái ----- */
+.content-left{
+    flex: 4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: #e5e5e5 1px solid;
+}
+
+/* ----- Phần thông tin người dùng ----- */
+.content-left-user-info{
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.content-left-user-info h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.content-left-user-info img{
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.content-left-user-info p{
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* ----- Phần thêm cây mới ----- */
+.content-left-add-tree {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.content-left-add-tree-header{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.content-left-add-tree > div{
+    margin-bottom: 15px;
+}
+
+.content-left-add-tree > div p{
+    margin-bottom: 3px;
+    font-size: 12px;
+}
+
+.content-left-add-tree > div input {
+    width: 100%;
+    padding: 10px 5px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    outline: none;
+}
+
+.content-left-add-tree-avatar input::-webkit-file-upload-button{
+    background-color: #999;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 8px;
+    border-radius: 3px;
+    border: none;
+    margin-right: 15px;
+    transition: all .3s;
+    border: 1px #999 solid;
+}
+
+.content-left-add-tree-avatar input::-webkit-file-upload-button:hover{
+    background-color: white;
+    color: #999;
+    border: #999  1px solid;
+}
+
+.content-left-add-tree > div button{
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 3px;
+    border: 2px solid #333;
+    color: #333;
+    transition: all .3s;
+}
+
+.content-left-add-tree > div button:hover{
+    color: white;
+    background-color: #333;
+    border: none;
+}
+
+/* ----- Phần bên phải ----- */
+.content-right-list-tree{
+    flex: 6;
+    padding: 20px;
+}
+
+.content-right-list-tree-header h1{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.content-right-list-tree-body{
+    width: 100%;
+}
+
+/* ----- Chi tiết cho từng cây ----- */
+
+.content-right-tree-avatar{
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.content-right-tree{
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    background-color: whitesmoke;
+    border-radius: 6px;
+}
+
+.content-right-tree:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.content-right-tree-content{
+    flex: 6;
+    padding: 10px;
+    display: flex;
+    border-radius: 6px 0 0 6px;
+}
+
+.content-right-tree-content:hover{
+    background-color: #e5e5e5;
+}
+
+.content-right-tree-delete{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 6px 6px 0;
+    transition: all .3s;
+}
+
+.content-right-tree-delete i{
+    color: #999;
+}
+
+.content-right-tree-delete:hover{
+    background-color: #999;
+}
+
+.content-right-tree-delete:hover i{
+    color: whitesmoke;
+}
+
+.content-right-tree-left{
+    flex: 1;
+}
+
+.content-right-tree-right{
+    flex: 2;
+    padding: 20px;
+}
+
+
+
+.content-right-tree-name{
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.content-right-tree-id{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.content-right-tree-id span{
+    font-weight: 700;
+    color: crimson;
+}
+
+

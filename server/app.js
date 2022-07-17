@@ -1,5 +1,9 @@
 // Công việc:
 // - Phần giao diện và điều khiển cho web client
+// - Giao diện Web
+//      + Thiết kế giao diện (HTML, CSS)
+//      + Chuyển sang EJS
+// - Backend (APIs)
 
 // Import module
 const express = require('express')
@@ -10,10 +14,13 @@ const mqttInfo = require('./config.json').MQTTBrokerInfo
 const cookieParser = require('cookie-parser')
 const database = require('./database')
 const utils = require('./utils')
-const { getCurrentDateString } = require('./utils')
 
 // Constant
 const water_time = 15 // minutes
+
+// Import HTTP route
+const indexController = require('./routes/index')
+const userController = require('./routes/user')
 
 // Khởi tạo app
 const app = express()
@@ -32,6 +39,10 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 app.use(cookieParser())
 app.use('/public', express.static(path.join(__dirname, 'public')))
+
+// HTTP route
+indexController(app, mqttClient)
+userController(app, mqttClient)
 
 // MQTT connection
 // Thông tin topic
@@ -83,7 +94,7 @@ mqttClient.on('message', function(topic, payload){
                     const command = {}
 
                     command['id'] = id
-                    command['t'] = pump_duration
+                    command['duration'] = pump_duration
 
                     mqttUtils.publish(mqttClient, commandTopic, JSON.stringify(command))
                 }

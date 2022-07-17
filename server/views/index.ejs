@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/public/images/favicon.ico">
+  
+  <!-- Import CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+  <link rel="stylesheet" href="/public/stylesheets/default.css">
+  <link rel="stylesheet" href="/public/stylesheets/index.css">
+
+  <!-- Import JS file -->
+  <script src="/public/javascripts/index.js"></script>
+</head>
+<body>
+  <section>
+    <div class="title">
+      <h1>Smart Watering System</h1>
+      <p>Hệ thống tưới cây thông minh</p>
+    </div>
+    <div class="container">
+      <div class="content-left">
+        <p style="display: none;" class="change-button to-left"><i class="fas fa-angle-double-left"></i></p>
+        <div class="login-container">
+          <div class="content-left-login">
+            <div class="content-left-login-top">
+              <h1>Đăng nhập</h1>
+            </div>
+            <div class="content-left-login-body">
+              <div class="content-left-login-body-item">
+                <p>Username</p>
+                <input type="text" class="login-username" placeholder="Tên đăng nhập">
+              </div>
+              <div class="content-left-login-body-item">
+                <p>Password</p>
+                <input type="password" class="login-password" placeholder="Mật khẩu">
+              </div>
+            </div>
+            <p class="login-announce" style="color: red; width: 100%; margin-top: 12px; margin-bottom: -6px; font-size: 14px;">Bạn cần nhập thông tin để đăng nhập</p>
+            <div class="content-left-login-bottom">
+              <button onclick="login()">Đăng nhập</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-right">
+        <p class="change-button to-right"><i class="fas fa-angle-double-right"></i></p>
+
+        <div style="display: none;" class="register-container">
+          <div class="content-right-register">
+            <div class="content-right-register-top">
+              <h1>Đăng ký</h1>
+            </div>
+            <div class="content-right-register-body">
+              <div class="content-right-register-body-item">
+                <p>Username</p>
+                <input class="register-username" type="text" placeholder="Tên đăng nhập">
+              </div>
+              <div class="content-right-register-body-item">
+                <p>Password</p>
+                <input class="register-password-1" type="password" placeholder="Mật khẩu">
+              </div>
+              <div class="content-right-register-body-item">
+                <p>Password</p>
+                <input class="register-password-2" type="password" placeholder="Nhập lại mật khẩu">
+              </div>
+              <div class="content-right-register-body-item">
+                <p>Name</p>
+                <input class="register-name" type="text" placeholder="Họ và tên">
+              </div>
+              <div class="content-right-register-body-item">
+                <p>Email</p>
+                <input class="register-email" type="text" placeholder="Địa chỉ email">
+              </div>
+              <div class="content-right-register-body-item">
+                <p>Card ID</p>
+                <input class="register-card-id" type="text" placeholder="Ví dụ: 2A-4B-5C-12">
+              </div>
+            </div>
+            <p class="register-announce" style="color: red; width: 100%; margin-top: 12px; margin-bottom: -6px; font-size: 14px;">Bạn cần nhập thông tin để đăng ký</p>
+            <div class="content-right-register-bottom">
+              <button onclick="register()">Đăng ký</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
