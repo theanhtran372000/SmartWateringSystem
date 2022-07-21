@@ -13,14 +13,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="/public/stylesheets/default.css">
     <link rel="stylesheet" href="/public/stylesheets/home.css">
+
+    <!-- Import JS file -->
+    <script src="/public/javascripts/home.js"></script>
 </head>
 <body>
     <section class="container">
         <div class="content-left">
             <div class="content-left-user-info">
                 <h1 class="content-left-user-info-header">Thông tin người dùng</h1>
-                <img src="/public/images/cat.jpg" class="content-left-user-info-avatar">
-                <p class="content-left-user-info-name">Trần Thế Anh</p>
+                <img src="<%=avatar%>" class="content-left-user-info-avatar">
+                <p class="content-left-user-info-name"><%= name %></p>
+                <p class="content-left-user-info-id">User id: <span><%= userid %></span></p>
             </div>
 
             <hr width="100%" color="#e5e5e5" size="1px">
@@ -32,7 +36,7 @@
                     <input type="text" placeholder="Nhập loại cây" required>
                 </div>
                 <div class="content-left-add-tree-id">
-                    <p>Mô tả</p>
+                    <p>Mã hệ thống</p>
                     <input type="text" placeholder="Nhập mã hệ thống tưới" required>
                 </div>
                 <div class="content-left-add-tree-avatar">
@@ -43,6 +47,11 @@
                     <p>Mô tả</p>
                     <input type="text" placeholder="Nhập mô tả cây" required>
                 </div>
+
+                <div style="margin-bottom: 10px; margin-top: 5px;" class="content-left-add-tree-announce">
+                    <p style="font-size: 12px; color: red;">Mời bạn nhập thông tin!</p>
+                </div>
+
                 <div class="content-left-add-tree-button">
                     <button type="submit">Thêm mới</button>
                 </div>
@@ -55,90 +64,26 @@
             </div>
     
             <div class="content-right-list-tree-body">
-                <div class="content-right-tree">
-                    <div class="content-right-tree-content">
-                        <div class="content-right-tree-left">
-                            <img src="/public/images/tree.jpg" alt="" class="content-right-tree-avatar">
-                        </div>
-                        
-                        <div class="content-right-tree-right">
-                            <p class="content-right-tree-name">Cây lan</p>
-                            <p class="content-right-tree-id">ID <span>00000001</span></p>
-                            <p class="content-right-tree-description">Cây lan trong phòng khách</p>
-                        </div>
-                    </div>
-                    <div class="content-right-tree-delete">
-                        <i class="fas fa-2x fa-solid fa-trash"></i>
-                    </div>
-                </div>
+                <!-- Liệt kê những cây đang quản lý -->
 
+                <% for(let i = 0; i < listTree.length; i++) { %>
                 <div class="content-right-tree">
-                    <div class="content-right-tree-content">
+                    <div onclick="showDetail(this)" class="content-right-tree-content">
                         <div class="content-right-tree-left">
-                            <img src="/public/images/tree.jpg" alt="" class="content-right-tree-avatar">
+                            <img src="<%=listTree[i].image%>" alt="" class="content-right-tree-avatar">
                         </div>
                         
                         <div class="content-right-tree-right">
-                            <p class="content-right-tree-name">Cây lan</p>
-                            <p class="content-right-tree-id">ID <span>00000001</span></p>
-                            <p class="content-right-tree-description">Cây lan trong phòng khách</p>
+                            <p class="content-right-tree-name"><%=listTree[i].type%></p>
+                            <p class="content-right-tree-id">ID <span><%=listTree[i].id%></span></p>
+                            <p class="content-right-tree-description"><%=listTree[i].description%></p>
                         </div>
                     </div>
-                    <div class="content-right-tree-delete">
+                    <div onclick="deleteTree(this)" class="content-right-tree-delete">
                         <i class="fas fa-2x fa-solid fa-trash"></i>
                     </div>
                 </div>
-
-                <div class="content-right-tree">
-                    <div class="content-right-tree-content">
-                        <div class="content-right-tree-left">
-                            <img src="/public/images/tree.jpg" alt="" class="content-right-tree-avatar">
-                        </div>
-                        
-                        <div class="content-right-tree-right">
-                            <p class="content-right-tree-name">Cây lan</p>
-                            <p class="content-right-tree-id">ID <span>00000001</span></p>
-                            <p class="content-right-tree-description">Cây lan trong phòng khách</p>
-                        </div>
-                    </div>
-                    <div class="content-right-tree-delete">
-                        <i class="fas fa-2x fa-solid fa-trash"></i>
-                    </div>
-                </div>
-
-                <div class="content-right-tree">
-                    <div class="content-right-tree-content">
-                        <div class="content-right-tree-left">
-                            <img src="/public/images/tree.jpg" alt="" class="content-right-tree-avatar">
-                        </div>
-                        
-                        <div class="content-right-tree-right">
-                            <p class="content-right-tree-name">Cây lan</p>
-                            <p class="content-right-tree-id">ID <span>00000001</span></p>
-                            <p class="content-right-tree-description">Cây lan trong phòng khách</p>
-                        </div>
-                    </div>
-                    <div class="content-right-tree-delete">
-                        <i class="fas fa-2x fa-solid fa-trash"></i>
-                    </div>
-                </div>
-
-                <div class="content-right-tree">
-                    <div class="content-right-tree-content">
-                        <div class="content-right-tree-left">
-                            <img src="/public/images/tree.jpg" alt="" class="content-right-tree-avatar">
-                        </div>
-                        
-                        <div class="content-right-tree-right">
-                            <p class="content-right-tree-name">Cây lan</p>
-                            <p class="content-right-tree-id">ID <span>00000001</span></p>
-                            <p class="content-right-tree-description">Cây lan trong phòng khách</p>
-                        </div>
-                    </div>
-                    <div class="content-right-tree-delete">
-                        <i class="fas fa-2x fa-solid fa-trash"></i>
-                    </div>
-                </div>
+                <% } %>
             </div>
         </div>
     </section>

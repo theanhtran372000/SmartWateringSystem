@@ -1,7 +1,7 @@
 // Công việc:
 // - Phần giao diện và điều khiển cho web client
 // - Giao diện Web
-//      + Thiết kế giao diện (HTML, CSS)
+//      + Thiết kế giao diện (HTML, CSS)        v
 //      + Chuyển sang EJS
 // - Backend (APIs)
 

@@ -218,6 +218,29 @@ section {
   width: 220px;
 }
 
+.content-right-register-body-item:last-child input{
+  border: 1px solid #ccc;
+  background-color: whitesmoke;
+  font-size: 10px;
+  padding: 5px;
+}
+
+.content-right-register-body-item:last-child input::-webkit-file-upload-button{
+  background-color: whitesmoke;
+  border: 1px solid #ccc;
+  padding: 6px;
+  margin-right: 5px;
+  transition: all .3s;
+  font-size: 8px;
+}
+
+.content-right-register-body-item:last-child input::-webkit-file-upload-button:hover{
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
 .content-right-register-bottom{
   flex: 1;
   display: flex;

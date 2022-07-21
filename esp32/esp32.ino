@@ -281,7 +281,7 @@ void callback(char* topic, byte* payload, unsigned int length){
     if(command["id"] == deviceId){
       Serial.println("Right ID");
 
-      int t = (int) command["t"]; // Thời gian bơm
+      int t = (int) command["duration"]; // Thời gian bơm
 
       Serial.print("Turn on water pump in "); Serial.print(t); Serial.println("ms");
       pumping(t); // Bật máy bơm

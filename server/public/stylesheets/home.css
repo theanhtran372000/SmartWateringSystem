@@ -44,10 +44,20 @@ body{
     border-radius: 6px;
 }
 
-.content-left-user-info p{
+.content-left-user-info-name{
     text-align: center;
     font-size: 16px;
     font-weight: 700;
+}
+
+.content-left-user-info-id {
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+}
+
+.content-left-user-info-id span{
+    color: crimson;
 }
 
 /* ----- Phần thêm cây mới ----- */
@@ -192,8 +202,6 @@ body{
     padding: 20px;
 }
 
-
-
 .content-right-tree-name{
     font-size: 14px;
     font-weight: 600;
@@ -211,3 +219,38 @@ body{
 }
 
 
+/* ----- RESPONSIVE ----- */
+@media only screen and (max-width: 600px){
+    .container{
+        flex-direction: column;
+    }
+
+    .content-left{
+        border-right: 0px;
+        width: 100%;
+    }
+
+    .content-right{
+        width: 100%;
+    }
+
+    .content-right-tree-right{
+        padding: 10px;
+    }
+
+    .content-right-tree-avatar{
+        height: 80px;
+    }
+
+    .content-right-tree-name{
+        font-size: 12px;
+    }
+
+    .content-right-tree-id{
+        font-size: 10px;
+    }
+
+    .content-right-tree-description{
+        font-size: 10px;
+    }
+}

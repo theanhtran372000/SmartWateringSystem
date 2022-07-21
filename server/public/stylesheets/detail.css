@@ -1,0 +1,270 @@
+/* ----- Cấu hình tổng quan ----- */
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: whitesmoke;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px #999;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+}
+
+h1{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ----- Cấu hình bên trái -----*/
+.content-left {
+    padding: 20px;
+    padding-right: 40px;
+    flex: 5;
+    border-right: 1px solid #e5e5e5;
+}
+
+/* ----- Trái đầu ----- */
+.content-left-header{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.content-left-header-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-left-header-content-image{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.content-left-header-content-type{
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+.content-left-header-content-id{
+    font-size: 10px;
+    font-weight: 600;
+    color: crimson;
+    margin-bottom: 10px;
+}
+
+.content-left-header-content-description{
+    font-size: 12px;
+    color: #999;
+}
+
+/* ----- Trái trên -----*/
+.content-left-top{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.content-left-top-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-left-top-content > div > p{
+    width: 100%;
+}
+
+.content-left-top-content > div > p:first-child{
+    font-size: 10px;
+    color: #999;
+    text-align: center;
+}
+
+.content-left-top-content > div > p:last-child{
+    font-size: 22px;
+    color: #f39c12;
+    text-align: center;
+}
+
+/* ----- Trái dưới ----- */
+.content-left-bottom{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.content-left-bottom-item{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.content-left-bottom-item p{
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.content-left-bottom-item-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-left-bottom-item .content-left-bottom-item-content p{
+    color: #8e44ad;
+}
+
+.content-left-bottom-item-content input{
+    outline: none;
+    padding: 10px 5px;
+    flex: 2;
+    border-radius: 3px;
+    border: 1px #999 solid;
+}
+
+.content-left-bottom-item-content p{
+    flex: 1;
+    margin-right: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.content-left-bottom-button{
+    margin-top: 10px;
+}
+
+.content-left-bottom-button button{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    border: #333 solid 2px;
+    color: #333;
+    transition: all .3s;
+}
+
+.content-left-bottom-button button:hover{
+    color: white;
+    background: #333;
+}
+
+/* ----- Cấu hình bên phải -----*/
+
+/* ----- Phải trên -----*/
+.content-right{
+    padding: 20px;
+    padding-left: 40px;
+    flex: 5;
+}
+
+.content-right-top{
+    margin-bottom: 50px;
+}
+
+.content-right-top-content{
+    margin-bottom: 10px;
+}
+
+.content-right-top-content p{
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.content-right-top-content input{
+    outline: none;
+    padding: 10px 5px;
+    width: 100%;
+    border-radius: 3px;
+    border: 1px #999 solid;
+}
+
+.content-right-top-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content-right-top-button button{
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 3px;
+    border: #333 solid 2px;
+    color: #333;
+    transition: all .3s;
+}
+
+.content-right-top-button button:first-child{
+    margin-right: 20px;
+}
+
+.content-right-top-button button:hover{
+    color: white;
+    background: #333;
+}
+
+/* ----- Phải dưới ----- */
+.content-right-bottom{
+    width: 100%;
+}
+
+.content-right-bottom-item{
+    width: 100%;
+    display: flex;
+    background-color: #e5e5e5;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.content-right-bottom-item > div > p:first-child{
+    font-size: 12px;
+    text-align: center;
+    width: 100%;
+    color: #999;
+}
+
+.content-right-bottom-item > div > p:last-child{
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    color: #333;
+}
+
+@media only screen and (max-width: 600px){
+    .container{
+        flex-direction: column;
+    }
+
+    .content-left{
+        border-right: 0px;
+        padding-right: 20px;
+    }
+
+    .content-right{
+        padding-left: 20px;
+    }
+
+    .content-left-header-content-image{
+        height: 350px;
+    }
+}

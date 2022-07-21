@@ -5,8 +5,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông tin chi tiết</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/public/images/favicon.ico">
+
+    <!-- Import CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="/public/stylesheets/default.css">
+    <link rel="stylesheet" href="/public/stylesheets/detail.css">
+
+    <!-- Import JS file -->
+    <script src="/public/javascripts/detail.js"></script>
 </head>
 <body>
-    <h1>Thông tin chi tiết</h1>
+    <section class="container">
+        <div class="content-left">
+            <div class="content-left-header">
+                <h1>Thông tin hệ thống</h1>
+                <div class="content-left-header-content">
+                    <img src="<%=image%>" alt="Tree" class="content-left-header-content-image">
+                    <p class="content-left-header-content-type"><%=type%></p>
+                    <p class="content-left-header-content-id"><%=id%></p>
+                    <p class="content-left-header-content-description">
+                        <%=description%>
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-left-top">
+                <h1>Thông số hiện tại</h1>
+                <div class="content-left-top-content">
+                    <div class="content-left-top-content-left">
+                        <p>Độ ẩm đất (%)</p>
+                        <p><%=humi%></p>
+                    </div>
+                    <div class="content-left-top-content-middle">
+                        <p>Mực nước (mm)</p>
+                        <p><%=water%></p>
+                    </div>
+                    <div class="content-left-top-content-right">
+                        <p>Trạng thái bơm</p>
+                        <% if (state == 1) { %>
+                            <p style="color: #2ecc71">Bật</p>
+                        <% } else { %>
+                            <p style="color: #e74c3c">Tắt</p>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="content-left-bottom">
+                <h1>Thông số mặc định</h1>
+                <div class="content-left-bottom-item">
+                    <p>Thời gian tưới (ms)</p>
+
+                    <div class="content-left-bottom-item-content">
+                        <p><span><%= duration %></span> ms</p>
+                        <input type="number" value="<%= duration %>">
+                    </div>
+                    
+                </div>
+                <div class="content-left-bottom-item">
+                    <p>Độ ẩm tối thiểu (%)</p>
+                    <div class="content-left-bottom-item-content">
+                        <p><span><%= threshold %></span> %</p>
+                        <input type="number" value="<%= threshold %>">
+                    </div>
+                </div>
+
+                <p class="content-left-bottom-announce" style="color: #3498db;">Thông tin mặc định của hệ thống</p>
+
+                <div class="content-left-bottom-button">
+                    <button onclick="updateDefault()">Cập nhật</button>
+                </div>
+            </div>
+        </div>
+        <div class="content-right">
+            
+            <div class="content-right-top">
+                <h1>Bảng điều khiển</h1>
+                <div class="content-right-top-content">
+                    <p>Thời gian tưới (ms)</p>
+                    <input type="number" value="1000">
+                </div>
+
+                <p class="content-right-top-announce" style="color: #3498db; margin-bottom: 10px;">Ấn nút để tưới cây</p>
+
+                <div class="content-right-top-button">
+                    <button onclick="startWatering()">Bắt đầu tưới</button>
+                    <button onclick="defaultWatering()">Tưới mặc định</button>
+                </div>
+            </div>
+
+            <div class="content-right-bottom">
+                <h1>Lịch sử tưới</h1>
+
+                <div class="content-right-bottom-container">
+                    <% for (let i = 0; i < history.length; i++) { %>
+
+                        <div class="content-right-bottom-item">
+                            <div class="content-right-bottom-item-1">
+                                <p>Ngày tưới</p>
+                                <p><%= history[i].date %></p>
+                            </div>
+                            <div class="content-right-bottom-item-2">
+                                <p>Giờ tưới</p>
+                                <p><%= history[i].time %></p>
+                            </div>
+                            <div class="content-right-bottom-item-3">
+                                <p>Thời gian tưới</p>
+                                <p><%= history[i].duration %> ms</p>
+                            </div>
+                        </div>
+        
+                        <% } %>
+                    </div>
+                </div>
+        </div>
+    </section>
 </body>
 </html>
