@@ -247,7 +247,7 @@ module.exports = function (app, mqttClient){
     // Tưới cây
     app.post('/watering', function (req, res){
         const treeid = req.body.treeid
-        const duration = req.body.duration
+        const duration = parseInt(req.body.duration)
 
         // Gửi tín hiệu tưới
         const command = {
@@ -262,16 +262,11 @@ module.exports = function (app, mqttClient){
         conn.query('select * from watering_system where device_id = ?', [treeid], function(err, results){
             if (err) throw err
 
-            const systemId = results[0].id
             const currentState = results[0].pump_state
 
-            conn.query('insert into watering (system_id, device_id, water_time, duration) values (?, ?, ?, ?)', [systemId, treeid, utils.getCurrentDateString(), duration], function(err, results){
-                if(err) throw err
-
-                res.send({
-                    status: 'success',
-                    pumpState: currentState
-                })
+            res.send({
+                status: 'success',
+                pumpState: currentState
             })
 
             conn.end()
@@ -287,7 +282,6 @@ module.exports = function (app, mqttClient){
         const arr = []
         arr.push('select * from system_stats where device_id = ? order by read_time desc limit 1')
         arr.push('select * from watering_system where device_id = ?')
-
         conn.query(arr.join('; '), [treeid, treeid], function(err, results){
             if(err) throw err
 

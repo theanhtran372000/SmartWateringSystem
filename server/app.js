@@ -106,7 +106,7 @@ mqttClient.on('message', function(topic, payload){
             }
 
             // Lưu dữ liệu vào db
-            conn.query("insert into system_stats(system_id, soil_humi, water_level, read_time) values (?, ?, ?, ?)", [system_id, humi, level, utils.getCurrentDateString()], function (err, results){
+            conn.query("insert into system_stats(system_id, device_id, soil_humi, water_level, read_time) values (?, ?, ?, ?, ?)", [system_id, id, humi, level, utils.getCurrentDateString()], function (err, results){
                 if (err) throw err
 
                 console.log("Saved data to database!")
@@ -138,9 +138,9 @@ mqttClient.on('message', function(topic, payload){
                 
                 // Update thông tin về trạng thái tưới, thời gian tưới
                 const now  = utils.getCurrentDateString()
-                conn.query('update watering_system set pump_state = ?, last_watering = ? where id = ?; insert into watering(system_id, water_time, duration) values (?, ?, ?)',
+                conn.query('update watering_system set pump_state = ?, last_watering = ? where id = ?; insert into watering(system_id, device_id, water_time, duration) values (?, ?, ?, ?)',
                     [state, now, system_id,
-                    system_id, now, duration], 
+                    system_id, id, now, duration], 
                     function(err, results){
                     if (err) throw err
                     

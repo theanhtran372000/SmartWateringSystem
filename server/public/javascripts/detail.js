@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const interval = 3000 // ms
+    const interval = 1000 // ms
 
     // Auto update dữ liệu
     setInterval(function () {
@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('.content-left-top-content-left p:last-child').innerHTML = res.humi
                     document.querySelector('.content-left-top-content-middle p:last-child').innerHTML = res.water
 
+                    // Update pump state
                     const container = document.querySelector('.content-left-top-content-right')
                     if (res.pumpState == 1){
                         container.innerHTML = `
@@ -30,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p style="color: #e74c3c">Tắt</p>
                         `
                     }
+
+                    // Update history
+                    updateHistory()
                 }
                 else{
                     console.log('Update data fail!')
@@ -136,11 +140,7 @@ function watering(duration){
                     <p>Trạng thái bơm</p>
                     <p style="color: #e74c3c">Tắt</p>
                     `
-                }
-
-                // Cập nhật lịch sử tưới
-                updateHistory()
-                
+                }                
             }
             else{
                 console.log('Update default fail!')
@@ -206,5 +206,4 @@ function updateHistory() {
     xhttp.open('POST', '/getHistory', true)
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xhttp.send(`treeid=${treeid}`)
-
 }
