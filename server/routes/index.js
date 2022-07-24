@@ -19,14 +19,6 @@ module.exports = function (app, mqttClient){
         res.render('index')
     })
 
-    app.get('/home', function(req, res, next){
-        res.render('home')
-    })
-
-    app.get('/detail', function(req, res, next){
-        res.render('detail')
-    })
-
     // Xử lý request đăng nhập
     app.post('/login', function (req, res){
         // Dữ liệu gửi lên trong body
